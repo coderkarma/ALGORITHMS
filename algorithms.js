@@ -137,3 +137,9 @@ function correct(string) {
     return newStr;
 
 }
+
+// find the nth number
+function nthEven(n) {
+    // to find the nth element 
+    return n + (n - 2);
+}
