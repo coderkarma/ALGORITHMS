@@ -143,3 +143,56 @@ function nthEven(n) {
     // to find the nth element 
     return n + (n - 2);
 }
+
+//Every possible sum of two digits
+function digits(num) {
+    //  declare the result 
+    let result = [];
+    // convert to string
+    let str = String(num);
+    // split the stirng in to array 
+    let newArr = str.split('');
+    // loop through the array
+    for (let i = 0; i < newArr.length; i += 1) {
+        let num1 = newArr[i];
+        // do second loop 
+        for (let j = i + 1; j < newArr.length; j += 1) {
+            let num2 = newArr[j];
+            // add num1 and num2
+            // since these are string so convert to numbers
+            let sum = +num1 + +num2;
+            // push the ele1 + ele2 
+            result.push(sum);
+            // return the result
+        }
+    }
+    return result;
+}
+digits(156) //, [ 6, 7, 11 ]
+
+// SubArray elements sum 
+
+function elementsSum(arr, d = 0) {
+    // create a newArr 
+    let newArr = arr.length;
+    // declare variable result 
+    let result = 0;
+    // decrement the newArr to get the the index 0
+    newArr--;
+
+    // loop through the arr
+    for (let i = 0; i < arr.length; i += 1) {
+        // check if the newaRR key exits  in arr
+        if (newArr in arr[i]) {
+            // if it is then concate the result += d
+            result += arr[i][newArr]
+            // else just result += d
+        } else {
+            // decrement the newArr 
+            result += d;
+        }
+        newArr--;
+    }
+    // return the result
+    return result;
+}
