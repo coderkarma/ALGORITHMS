@@ -1,0 +1,4 @@
+
+function booleanToString(b) {
+    return !b ? "false" : "true";
+}
