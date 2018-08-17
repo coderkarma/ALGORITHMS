@@ -1,0 +1,16 @@
+function balancedNum(number){
+  let arr = String(number).split('');
+   // declare the variable string1 and string 2
+    let str1 = 0, str2 = 0;
+   // do while if the arr.length > 2  then
+    while (arr.length > 2){
+   // pop off the element of str concate the element conver to the number
+     str1 += +arr.pop();
+   // shift and concate the with s2
+      str2 += +arr.shift();
+      // check if  s1 === s2 , if it then return balanced , not balance
+      }
+    return str1 === str2 ? "Balanced" : "Not Balanced";
+   
+   }
+    balancedNum(13);
