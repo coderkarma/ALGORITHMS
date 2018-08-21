@@ -1,5 +1,5 @@
 
-// SubArray elements sum 
+//  SubArray elements sum
 
 function elementsSum(arr, d = 0) {
     // create a newArr 

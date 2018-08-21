@@ -1,4 +1,3 @@
-// consonant please 
 function sortLetters(arr) {
     // declare vowels varible
     let vowels = 'aeiouAEIOU';
