@@ -1,4 +1,4 @@
-var summation = function (num) {
+let summation = function (num) {
   // declare sum
   let sum = 0;
   // loop upto num and get add  
