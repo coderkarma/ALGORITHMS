@@ -1,5 +1,4 @@
-// build stack from scratch
-
+// build stack from scratch using linkedList data structure
 class Node {
     constructor(value) {
         this.value = value;
