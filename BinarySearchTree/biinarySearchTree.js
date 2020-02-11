@@ -137,6 +137,29 @@ class Node {
         }
       }
     }
+
+    // BreathSearchFirst 
+    breadthFirstSearch() {
+      let currentNode = this.root;
+      let list = [];
+      let queue = [];
+  
+      queue.push(currentNode);
+  
+      while (queue.length > 0) {
+        currentNode = queue.shift();
+        console.log('currentnode', currentNode);
+        list.push(currentNode.value);
+  
+        if (currentNode.left) {
+          queue.push(currentNode.left);
+        }
+        if (currentNode.right) {
+          queue.push(currentNode.right);
+        }
+      }
+      return list;
+    }
   }
   const tree = new BinarySearchTree();
   tree.insert(9);
@@ -146,8 +169,13 @@ class Node {
   tree.insert(170);
   tree.insert(15);
   tree.insert(1);
-  tree.insert(100);
-  console.log(tree.remove(100))
+  // tree.insert(100);
+  // console.log(tree.remove(100))
+
+  console.log(tree.breadthFirstSearch())   
+  //  [9,  4,  20, 1,
+  //   6, 15, 170
+  // ]
   console.log(tree);
   // console.log(tree);
   
