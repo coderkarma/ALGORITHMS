@@ -60,3 +60,15 @@ console.log('slow fibonanci', fib(10)); // O(n2)
 console.log('Dynamic programming', fasterFib(10)); // o(n)
 
 console.log(`We did ${calcualtions} calculations`);
+
+// ******** Another way to write memoization dynamic programming
+
+const fibNum = (n, memo = [undefined, 1, 1]) => {
+  if (memo[n] !== undefined) {
+    return memo[n];
+  }
+  let res = fib(n -1, memo) + fib(n -2, memo);
+   memo[n] = res;
+   return res
+ };
+console.log(fibNum(50))     /// 
