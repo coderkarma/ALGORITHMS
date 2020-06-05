@@ -38,7 +38,7 @@ class BinarySearchTree {
 					return this;
 				} else {
 					// if there is right node already then update the node
-					current.right = newNode;
+					current = current.right;
 				}
 			}
 		}
@@ -68,8 +68,6 @@ class BinarySearchTree {
 let tree = new BinarySearchTree();
 tree.insert(10);
 tree.insert(3);
-
-
 
 tree.insert(14);
 tree.insert(1);
