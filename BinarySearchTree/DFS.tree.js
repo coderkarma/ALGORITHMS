@@ -53,9 +53,9 @@ class BinarySearchTree {
 
 		while (current && !found) {
 			if (value < current.value) {
-				current = current.left;
+				current.left = newNode;
 			} else if (value > current.value) {
-				current = current.right;
+				current.right = newNode;
 			} else {
 				found = true;
 			}
@@ -63,18 +63,48 @@ class BinarySearchTree {
 		if (!found) return undefined;
 		return current;
 	}
+
+	/// --------> BFS
+
+	BFS() {
+		let node = this.root;
+		let queue = [];
+		let data = [];
+
+		queue.push(node);
+
+		// check to see if there is something in queue
+		while (queue.length) {
+			node = queue.shift();
+
+			data.push(node.value);
+			// check to see if the node has left or right:
+			if (node.left) queue.push(node.left);
+			if (node.right) queue.push(node.right);
+		}
+		return data;
+	}
+
+	/// -----> Depth first Search   -- Pre0rder -- recursively
+
+	DFS() {
+		let data = [];
+		const traverse = (node) => {
+			data.push(node.value);
+			if (node.left) traverse(node.left);
+			if (node.right) traverse(node.right);
+		};
+		traverse(this.root);
+		return data;
+	}
 }
 
 let tree = new BinarySearchTree();
 tree.insert(10);
+tree.insert(6);
+tree.insert(15);
 tree.insert(3);
+tree.insert(8);
+tree.insert(20);
 
-tree.insert(14);
-tree.insert(1);
-tree.insert(1);
-
-console.log(tree);
-
-//       10
-//    5     13
-//  2  6    7  16
+console.log(tree.DFS());
